@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Website Layout | CodingLab</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style media="screen">
+      *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #fcfcfc;
+    font-family: sans-serif;
+}
+
+/*----------------genealogy-scroll----------*/
+
+.genealogy-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+.genealogy-scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+.genealogy-scroll::-webkit-scrollbar-thumb {
+    background: #212121;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.genealogy-scroll::-webkit-scrollbar-thumb:hover {
+    background: #d5b14c;
+    transition: 0.5s;
+}
+
+
+/*----------------genealogy-tree----------*/
+.genealogy-body{
+    white-space: nowrap;
+    overflow-y: hidden;
+    padding: 50px;
+    min-height: 500px;
+    padding-top: 10px;
+    text-align: center;
+}
+.genealogy-tree{
+  display: inline-block;
+}
+.genealogy-tree ul {
+    padding-top: 20px; 
+    position: relative;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+}
+.genealogy-tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+.genealogy-tree li::before, .genealogy-tree li::after{
+    content: '';
+    position: absolute; 
+  top: 0; 
+  right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%; 
+  height: 18px;
+}
+.genealogy-tree li::after{
+    right: auto; left: 50%;
+    border-left: 2px solid #ccc;
+}
+.genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
+    display: none;
+}
+.genealogy-tree li:only-child{ 
+    padding-top: 0;
+}
+.genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after{
+    border: 0 none;
+}
+.genealogy-tree li:last-child::before{
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.genealogy-tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+.genealogy-tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0; height: 20px;
+}
+.genealogy-tree li a{
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.genealogy-tree li a:hover+ul li::after, 
+.genealogy-tree li a:hover+ul li::before, 
+.genealogy-tree li a:hover+ul::before, 
+.genealogy-tree li a:hover+ul ul::before{
+    border-color:  #fbba00;
+}
+
+/*--------------memeber-card-design----------*/
+.member-view-box{
+    padding:0px 20px;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+}
+.member-image{
+    width: 60px;
+    position: relative;
+}
+.member-image img{
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+  background-color :#000;
+  z-index: 1;
+}
+/* about */
+p.outset {
+border-bottom-style:solid ;}
+
+    </style> 
+  </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+       <img src="sac.jpeg"  width="50px" height="50px" style="border-radius: 50px; ">
+        <a href="index.html" style="font-size: 15px;">SAC (STUDENT ACTIVITY COUNCIL)</a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+      
+        <li><a href="events.html">Events</a></li>
+
+      </ul>
+    </div>
+  </nav>
+  <div class="img">
+    
+  </div>
+  
+  <div class="center">
+    
+    </div>
+  </div>
+    <div>
+      <br><br><br><br><br><br>
+      <center><h2 style="color:black" >About Us</h2>
+      <p class="outset" style="color:black ;font-weight: 20px; width: 50%; height: 200px;">Student Activity Council is the student body of Aditya College Of Engineering.
+Presenting the views of the student community on issues of collective concern through itself,  well as through its representation and say in various other policy and decision making bodies of the institute
+        </p></center>
+    </div>
+<div>
+  <center><h2 style="color:black">Our Team</h2 ></center>
+    <div class="body genealogy-body genealogy-scroll">
+      <div class="genealogy-tree">
+          <ul>
+              <li>
+                  <a href="javascript:void(0);">
+                      <div class="member-view-box">
+                          <div class="member-image">
+                              <img src="sac.jpeg" >
+                              <div class="member-details">
+                               
+                              </div>
+                          </div>
+                      </div>
+                  </a>
+                  <ul class="active">
+                      <li>
+                          <a href="javascript:void(0);">
+                              <div class="member-view-box">
+                                  <div class="member-image">
+                                     
+                                      <div class="member-details">
+                                    <h5>P.HARI PRASAD </h5>
+                                    <p>President</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                          <ul >
+                     
+                              <li>
+                                  <a href="javascript:void(0);">
+                                      <div class="member-view-box">
+                                          <div class="member-image">
+                                            <h5>Harika  </h5>
+                                                <p>Vice-President</p>
+                                           
+                                              <div class="member-details">
+                                                 
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="javascript:void(0);">
+                                      <div class="member-view-box">
+                                          <div class="member-image">
+                                            <h5>Preshka  </h5>
+                                            <p>Vice-President</p>
+                                              <div class="member-details">
+                                                  
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </a>
+                                  <ul>
+                                   
+                                          <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="member-view-box">
+                                                    <div class="member-image">
+                                                        <h5> Deepika</h5>
+                                                        <p>General-Secretary</p>
+                                                        <div class="member-details">
+                                                     
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <ul>
+                                       
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="member-view-box">
+                                                            <div class="member-image">
+                                                              <h5>Akhil  </h5>
+                                                                  <p>Manager</p>
+                                                             
+                                                                <div class="member-details">
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="member-view-box">
+                                                            <div class="member-image">
+                                                                <h5>Chaitanya </h5>
+                                                                <p>Manager</p>
+                                                           
+                                                                <div class="member-details">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                        
+                                      </li>
+                                      <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="member-view-box">
+                                                <div class="member-image">
+                                                  <h5> Charan</h5> 
+                                                      <p>Manager</p>
+                                                 
+                                                    <div class="member-details">
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="member-view-box">
+                                                <div class="member-image">
+                                                  <h5>Bhuneswari</h5>
+                                                  <p>Manager</p>
+                                                    <div class="member-details">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                            
+                              
+                                          </ul>
+                                      </li>
+                               
+                                  </ul>
+                              </li>
+                          </ul>
+                      </li>
+        
+                          </ul>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  </div>
+      
+  </div>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4></h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clubs.html">Clubs</a></li>
+            <li><a href="events.html">Events</a></li>
+          
+          </ul>
+        </div>
+        <div class="footer-col">
+       
+        </div>
+        <div class="footer-col">
+       <img src="sac.jpeg" style="width: 100px;height: 100px; border-radius: 50px;">
+     
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/sac_aditya?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram"></i></a>
+         
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
+
+</body>
+
+
+</html>
